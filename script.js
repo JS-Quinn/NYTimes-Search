@@ -20,9 +20,9 @@ $("#search").click(function(){
 })
 
 function createListing(response){
-    for(var i = 0; i < numResults; i++){ 
+    for(var i = 0; i < numResults + 1; i++){ 
         var articleHolder = $("<div>").attr("class","well well-lg").attr("id","article-holder")
-        var articleTitle = $("<h2>").text(i + response.response.docs[i].headline.main)
+        var articleTitle = $("<h2>").text(i + ": " + response.response.docs[i].headline.main)
         var articleAuthor = $("<h5>").text(response.response.docs[i].byline.original)
         $("#article-holder").append(articleTitle, articleAuthor);
         $("#results").append(articleHolder)
